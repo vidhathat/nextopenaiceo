@@ -89,7 +89,7 @@ export default function Home() {
           __html: html1(capitalizeFirstLetter(name), imageUrl),
         }}
       />
-      <div className="flex flex-col items-center h-screen justify-center bg-black">
+      <div className="flex flex-col items-center h-screen w-full justify-center bg-black">
         {loading ? (
           <div>
             <Lottie
@@ -98,8 +98,8 @@ export default function Home() {
             />
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-4xl text-white">
+          <div className="flex flex-col items-center justify-center w-full px-2">
+            <p className="text-3xl sm:text-4xl text-white">
               Be the Next <span style={{ color: "#4185F4" }}>OpenAI</span> CEO
             </p>
             <img
@@ -110,7 +110,7 @@ export default function Home() {
               }
               alt="User Image"
             />
-            <div className="flex justify-center items-center py-6">
+            <div className="flex flex-col sm:flex-row justify-center items-center py-6 gap-4 sm:gap-0">
               <input
                 type="text"
                 id="name"
@@ -130,8 +130,7 @@ export default function Home() {
             </div>
             {image ? (
               <a
-                style={{ width: "468px" }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-4 rounded text-center"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-2 md:px-4 rounded text-center w-[80%]"
                 href={image}
                 download="image.png"
                 target="_blank"
@@ -141,8 +140,7 @@ export default function Home() {
             ) : (
               <button
                 onClick={generateImage}
-                style={{ width: "468px" }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-4 rounded"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-2 md:px-4 rounded w-[80%]"
               >
                 Generate image
               </button>
