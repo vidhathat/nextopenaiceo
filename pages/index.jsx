@@ -114,7 +114,7 @@ export default function Home() {
               Be the Next <span style={{ color: "#4185F4" }}>OpenAI</span> CEO
             </p>
             <img
-              className="py-6 md:py-8 w-[300px] h-[200px] sm:w-[400px] sm:h-[300px] md:w-[600px] md:h-[400px] lg:w-[800px] lg:h-[600px]"
+              className="py-6 md:py-8 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]"
               src={
                 image ||
                 "https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg"
