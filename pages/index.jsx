@@ -56,16 +56,39 @@ export default function Home() {
           setLoading(false);
         }
       } catch (error) {
-        console.log(error);
-        setLoading(false);
-        const node = document.getElementById("html-node");
-        // make node display block so that html2canvas can detect it
-        node.style.display = "block";
-        const dataUrl = await htmlToImage.toPng(node);
-        // make node display none again
-        node.style.display = "none";
-        console.log(dataUrl);
-        setImage(dataUrl);
+        try {
+          const key = keys[Math.floor(Math.random() * keys.length)];
+
+          const response = await fetch("https://hcti.io/v1/image", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization:
+                "Basic " +
+                btoa(
+                  // "7e3294f3-08fa-4ecf-bab9-759bf8f39669:3b401572-e114-4521-bbe4-c13117b28be2"
+                  `${key.userid}:${key.apikey}`
+                ), // replace with your user_id and api_key
+            },
+            body: JSON.stringify({ html: html(name, imageUrl), css }),
+          });
+
+          const data = await response.json();
+          console.log(data);
+          setImage(data.url);
+          setLoading(false);
+        } catch (error) {
+          console.log(error);
+          setLoading(false);
+          const node = document.getElementById("html-node");
+          // make node display block so that html2canvas can detect it
+          node.style.display = "block";
+          const dataUrl = await htmlToImage.toPng(node);
+          // make node display none again
+          node.style.display = "none";
+          console.log(dataUrl);
+          setImage(dataUrl);
+        }
       }
     }
   };
@@ -78,17 +101,32 @@ export default function Home() {
     <div>
       <Head>
         <title>Next OpenAI CEO</title>
-        <meta name="description" content="Announce yourself as the next CEO of Open AI" />
+        <meta
+          name="description"
+          content="Announce yourself as the next CEO of Open AI"
+        />
         {/* og tags */}
         <meta property="og:title" content="Next OpenAI CEO" />
-        <meta property="og:description" content="Announce yourself as the next CEO of Open AI" />
-        <meta property="og:image" content="https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg" />
+        <meta
+          property="og:description"
+          content="Announce yourself as the next CEO of Open AI"
+        />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg"
+        />
         <meta property="og:url" content="https://nextopenaiceo.vercel.app/" />
         <meta property="og:type" content="website" />
         {/* twitter tags */}
         <meta name="twitter:title" content="Next OpenAI CEO" />
-        <meta name="twitter:description" content="Announce yourself as the next CEO of Open AI" />
-        <meta name="twitter:image" content="https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg" />
+        <meta
+          name="twitter:description"
+          content="Announce yourself as the next CEO of Open AI"
+        />
+        <meta
+          name="twitter:image"
+          content="https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -101,12 +139,17 @@ export default function Home() {
         }}
       />
       <div className="flex flex-col items-center h-screen w-full justify-center bg-black">
-      <a className="absolute bottom-10 right-10" href="https://www.producthunt.com/posts/next-open-ai-ceo?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-next&#0045;open&#0045;ai&#0045;ceo" target="_blank" rel="noopener noreferrer">
-            <img 
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=426452&theme=light" 
-                alt="Next Open AI CEO - Anyone can be a CEO these days | Product Hunt" 
-                style={{width: '200px', height: '50px'}}
-            />
+        <a
+          className="absolute bottom-10 right-10"
+          href="https://www.producthunt.com/posts/next-open-ai-ceo?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-next&#0045;open&#0045;ai&#0045;ceo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=426452&theme=light"
+            alt="Next Open AI CEO - Anyone can be a CEO these days | Product Hunt"
+            style={{ width: "200px", height: "50px" }}
+          />
         </a>
         {loading ? (
           <div>
