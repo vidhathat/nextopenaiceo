@@ -101,6 +101,13 @@ export default function Home() {
         }}
       />
       <div className="flex flex-col items-center h-screen w-full justify-center bg-black">
+      <a className="absolute bottom-10 right-10" href="https://www.producthunt.com/posts/next-open-ai-ceo?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-next&#0045;open&#0045;ai&#0045;ceo" target="_blank" rel="noopener noreferrer">
+            <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=426452&theme=light" 
+                alt="Next Open AI CEO - Anyone can be a CEO these days | Product Hunt" 
+                style={{width: '200px', height: '50px'}}
+            />
+        </a>
         {loading ? (
           <div>
             <Lottie
@@ -125,7 +132,7 @@ export default function Home() {
               <input
                 type="text"
                 id="name"
-                className="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded mx-2 placeholder-white"
+                className="bg-[#232323] hover:bg-gray-700 text-white font-normal py-2 px-4 rounded mx-2 placeholder-white"
                 placeholder="Enter a Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -133,7 +140,7 @@ export default function Home() {
               <input
                 type="text"
                 id="image"
-                className="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded mx-2 placeholder-white"
+                className="bg-[#232323] hover:bg-gray-700 text-white font-normal py-2 px-4 rounded mx-2 placeholder-white"
                 placeholder="Paste Image URL"
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
