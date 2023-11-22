@@ -99,18 +99,18 @@ export default function Home() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
-            <p className="text-4xl mb-6 text-white">
+            <p className="text-4xl text-white">
               Be the Next <span style={{ color: "#4185F4" }}>OpenAI</span> CEO
             </p>
             <img
-              className="mb-10 w-[600px] h-[500px]"
+              className="py-6 md:py-8 w-[300px] h-[200px] sm:w-[400px] sm:h-[300px] md:w-[600px] md:h-[400px] lg:w-[800px] lg:h-[600px]"
               src={
                 image ||
                 "https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg"
               }
               alt="User Image"
             />
-            <div className="flex justify-center items-center mb-4">
+            <div className="flex justify-center items-center py-6">
               <input
                 type="text"
                 id="name"
@@ -131,7 +131,7 @@ export default function Home() {
             {image ? (
               <a
                 style={{ width: "468px" }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-4 rounded mt-4 text-center"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-4 rounded text-center"
                 href={image}
                 download="image.png"
                 target="_blank"
@@ -142,7 +142,7 @@ export default function Home() {
               <button
                 onClick={generateImage}
                 style={{ width: "468px" }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-4 rounded mt-4"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-4 rounded"
               >
                 Generate image
               </button>
