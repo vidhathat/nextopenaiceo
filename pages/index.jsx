@@ -77,8 +77,19 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>New OpenAI CEO</title>
-        <meta name="description" content="Generate your own OpenAI CEO image" />
+        <title>Next OpenAI CEO</title>
+        <meta name="description" content="Announce yourself as the next CEO of Open AI" />
+        {/* og tags */}
+        <meta property="og:title" content="Next OpenAI CEO" />
+        <meta property="og:description" content="Announce yourself as the next CEO of Open AI" />
+        <meta property="og:image" content="https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg" />
+        <meta property="og:url" content="https://nextopenaiceo.vercel.app/" />
+        <meta property="og:type" content="website" />
+        {/* twitter tags */}
+        <meta name="twitter:title" content="Next OpenAI CEO" />
+        <meta name="twitter:description" content="Announce yourself as the next CEO of Open AI" />
+        <meta name="twitter:image" content="https://i.ibb.co/Ns48NDm/F-b-ZX9-Cbc-AA4-Wcw-format-jpg-name-large.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
