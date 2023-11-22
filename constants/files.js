@@ -93,7 +93,7 @@ export const css = `html {
   .overlay-2 {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 30%);
     position: absolute;
     bottom: 0;
     left: 0;
