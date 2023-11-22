@@ -130,7 +130,7 @@ export default function Home() {
             </div>
             {image ? (
               <a
-                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-2 md:px-4 rounded text-center w-[80%]"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-2 md:px-4 rounded text-center"
                 href={image}
                 download="image.png"
                 target="_blank"
@@ -140,7 +140,7 @@ export default function Home() {
             ) : (
               <button
                 onClick={generateImage}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-2 md:px-4 rounded w-[80%]"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-normal py-2 px-2 md:px-4 rounded"
               >
                 Generate image
               </button>
